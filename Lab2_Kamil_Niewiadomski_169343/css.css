@@ -1,0 +1,81 @@
+body
+{
+background-color: #00FFFF;
+}
+#menu
+{
+margin-bottom: -180px;
+height: 150px;
+width: 79%;
+margin-left: 10%;
+background-color: #00EEEE;
+}
+img
+{
+padding-left: 10px;
+}
+.recenzje
+{
+height: 400px;
+width: 79%;
+margin-left: 10%;
+background-color: #00EEEE;
+}
+text
+{
+margin-left: 200px;
+}
+.galeria
+{
+width: 79%;
+margin-left: 10%;
+margin-top: 20px;
+background-color: #00EEEE;
+}
+h1
+{
+padding-top: 20px;
+text-align: center;
+color: #AAFFFF;
+}
+h2
+{
+margin-left: 350px;
+margin-top: -250px;
+bottom: 250px;
+}
+.ocen
+{
+border: 1px solid #00DDDD;
+position: relative;
+margin-left: 350px;
+bottom: 275px;
+}
+th, td
+{
+padding: 10px;
+}
+.zdjrec
+{
+height: 300px;
+width: 300px;
+}
+.galeriaimg
+{
+height: 150px;
+width: 150px;
+}
+.dodat
+{
+margin-left: 350px;
+margin-top: -250px;
+text-align: left;
+}
+.kontakt
+{
+margin-left: 100px;
+}
+.podstr
+{
+margin-left: 33%;
+}
