@@ -22,9 +22,11 @@ KOMPUTERY MOJĄ PASJĄ,<br>CZYLI RECENZJA KOMPUTERÓW
 <th><a href="lab1_5.html">PODSTRONA3</a></th>
 </tr>
 </table>
+<div id="zegarek">test</div>
+<div id="data">test</div>
 </div>
 <div class="recenzje" style="margin-top:200px;"><h1>KOMPUTER</h1><img src="test.jpeg" class="zdjrec">
-<table class="ocen">
+<table class="ocen" border="1">
 <tr>
 <th><span style="color: #FFFF00;">żółtość</span></th>
 <th><span style="color: #AAAA00;">czytnik płyt?</span></th>
@@ -38,7 +40,7 @@ KOMPUTERY MOJĄ PASJĄ,<br>CZYLI RECENZJA KOMPUTERÓW
 </table>
 </div>
 <div class="recenzje"><h1>KOMPUTER</h1><img src="test2.jpg" class="zdjrec">
-<table class="ocen">
+<table class="ocen" border="1">
 <tr>
 <th><span style="color: #FFFF00;">żółtość</span></th>
 <th><span style="color: #AAAA00;">czytnik płyt?</span></th>
@@ -52,7 +54,7 @@ KOMPUTERY MOJĄ PASJĄ,<br>CZYLI RECENZJA KOMPUTERÓW
 </table>
 </div>
 <div class="recenzje"><h1>KOMPUTER</h1><img src="test3.jpg" class="zdjrec">
-<table class="ocen">
+<table class="ocen" border="1">
 <tr>
 <th><span style="color: #FFFF00;">żółtość</span></th>
 <th><span style="color: #AAAA00;">czytnik płyt?</span></th>
@@ -66,7 +68,7 @@ KOMPUTERY MOJĄ PASJĄ,<br>CZYLI RECENZJA KOMPUTERÓW
 </table>
 </div>
 <div class="recenzje"><h1>KOMPUTER</h1><img src="test4.jpg" class="zdjrec">
-<table class="ocen">
+<table class="ocen" border="1">
 <tr>
 <th><span style="color: #FFFF00;">żółtość</span></th>
 <th><span style="color: #AAAA00;">czytnik płyt?</span></th>
@@ -80,7 +82,7 @@ KOMPUTERY MOJĄ PASJĄ,<br>CZYLI RECENZJA KOMPUTERÓW
 </table>
 </div>
 <div class="recenzje"><h1>KOMPUTER</h1><img src="test5.jpg" class="zdjrec">
-<table class="ocen">
+<table class="ocen" border="1">
 <tr>
 <th><span style="color: #FFFF00;">żółtość</span></th>
 <th><span style="color: #AAAA00;">czytnik płyt?</span></th>
@@ -107,13 +109,11 @@ GALERIA
 <img class="galeriaimg" src="galeria8.jpg">
 <img class="galeriaimg" src="galeria9.jpg">
 <img class="galeriaimg" src="galeria10.jpg">
-</div>
-<h1>
-WYKONAŁ: KAMIL NIEWIADOMSKI 169343 ISI 3
-</h1>
-<!-- LAB2 -->
-<form method="POST" name="background">
- <input type="button" value="żółty" onclick="changeBackground('#FFF000')">
+<p style="text-align: center;">
+<b>zmień kolor tła!</b>
+</p>
+<form method="POST" name="background" style="margin-left: 25%;">
+ <input type="button" value="żółty" onclick="changeh1('#FFF000')">
  <input type="button" value="czarny" onclick="changeBackground('#000000')">
  <input type="button" value="biały" onclick="changeBackground('#FFFFFF')">
  <input type="button" value="zielony" onclick="changeBackground('#00FF00')">
@@ -123,68 +123,24 @@ WYKONAŁ: KAMIL NIEWIADOMSKI 169343 ISI 3
  <input type="button" value="czerwony" onclick="changeBackground('#FF0000')">
  <input type="button" value="domyślny" onclick="changeBackground('#00FFFF')">
 </form>
-
-
-
-
-
-<form method="POST" name="background">
- <input type="button" value="czas" onclick="test()">
+<p style="text-align: center;">
+<b>zmień kolor sekcji!</b>
+</p>
+<form method="POST" name="color" style="margin-left: 25%;">
+ <input type="button" value="żółty" onclick="changerecenzje('#FFF000')">
+ <input type="button" value="czarny" onclick="changerecenzje('#000000')">
+ <input type="button" value="biały" onclick="changerecenzje('#FFFFFF')">
+ <input type="button" value="zielony" onclick="changerecenzje('#00FF00')">
+ <input type="button" value="niebieski" onclick="changerecenzje('#0000FF')">
+ <input type="button" value="pomarańczowy" onclick="changerecenzje('#FF8000')">
+ <input type="button" value="szary" onclick="changerecenzje('#c0c0c0')">
+ <input type="button" value="czerwony" onclick="changerecenzje('#FF0000')">
+ <input type="button" value="domyślny" onclick="changerecenzje('#00FFFF')">
 </form>
-
-<div class="recenzje" style="height: 700px;"></div>
-<div id="zegarek" style="background-color: red; height: 250px; width: 250px; float: left;">test</div>
-<div id="data" style="background-color: red; height: 250px; width: 250px; float: left;">test</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+<h1>
+WYKONAŁ: KAMIL NIEWIADOMSKI 169343 ISI 3
+</h1>
 </body>
 </html>
 <!--

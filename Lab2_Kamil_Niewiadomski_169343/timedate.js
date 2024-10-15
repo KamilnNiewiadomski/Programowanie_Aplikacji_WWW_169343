@@ -1,12 +1,12 @@
 
 function gettheDate()
 {
-	Todays = new Date();
-	TheDate = "" + (Todays.getMonth()+ 1) +" / "+ Todays.getDate() + " / " +(Todays.getYear()-100);
-	document.getElementById("data").innerHTML = TheDate;
+	dzis = new Date();
+	data = "" + (dzis.getMonth()+ 1) +" / "+ dzis.getDate() + " / " +(dzis.getYear()-100);
+	document.getElementById("data").innerHTML = data;
 }
 
-var timerID = null;
+var licznikID = null;
 var timerRunning = false;
 
 function stopclock()
@@ -36,6 +36,6 @@ function showtime()
 	timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
 	timeValue += (hours >= 12) ? "P.M" : "A.M";
 	document.getElementById("zegarek").innerHTML = timeValue;
-	timerID = setTimeout("showtime()",1000);
+	licznikID = setTimeout("showtime()",1000);
 	timerRunning = true;
 }

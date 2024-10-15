@@ -36,5 +36,12 @@ function clear (form)
 
 function changeBackground(hexNumber)
 {
-	document.bgColor = hexNumber;
+	document.body.style.background = hexNumber;
+}
+function changerecenzje(hexNumber)
+{
+const collection = document.getElementsByClassName("recenzje");
+for (let i = 0; i < collection.length; i++) {
+  collection[i].style.backgroundColor = hexNumber;
+}
 }
