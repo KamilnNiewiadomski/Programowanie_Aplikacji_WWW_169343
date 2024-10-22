@@ -100,7 +100,7 @@ KOMPUTERY MOJĄ PASJĄ,<br>CZYLI RECENZJA KOMPUTERÓW
 <h1 style="padding-top: 30px;">
 GALERIA
 </h1>
-<img class="galeriaimg" src="galeria1.jpg">
+<img id="tt" class="galeriaimg" src="galeria1.jpg">
 <img class="galeriaimg" src="galeria2.jpg">
 <img class="galeriaimg" src="galeria3.jpg">
 <img class="galeriaimg" src="galeria4.jpg">
@@ -113,6 +113,22 @@ GALERIA
 <p style="text-align: center;">
 <b>zmień kolor tła!</b>
 </p>
+<script>
+$(".galeriaimg").on({
+	"mouseover" : function(){
+		$(this).animate({
+			width: 300,
+			height: 300
+			}, 800);
+		},
+	"mouseout" : function() {
+			$(this).animate({
+				width: 150,
+				height: 150
+			}, 800);
+		}
+});
+</script>
 <form method="POST" name="background" style="margin-left: 25%;">
  <input type="button" value="żółty" onclick="changeh1('#FFF000')">
  <input type="button" value="czarny" onclick="changeBackground('#000000')">
