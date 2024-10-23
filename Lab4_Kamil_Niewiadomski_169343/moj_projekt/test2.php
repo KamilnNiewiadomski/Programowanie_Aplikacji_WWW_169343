@@ -1,0 +1,3 @@
+<?php
+$pobieranaliczbaj = 64;
+?>
