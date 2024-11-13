@@ -1,0 +1,3 @@
+<?php
+$pobieranaliczba = 404;
+?>
