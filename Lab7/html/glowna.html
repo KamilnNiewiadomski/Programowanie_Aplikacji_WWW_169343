@@ -1,0 +1,129 @@
+<div class="recenzje" style="margin-top:200px;"><h1>KOMPUTER</h1><img src="img/test.jpeg" class="zdjrec">
+<table class="ocen" border="1">
+<tr>
+<th><span style="color: #FFFF00;">żółtość</span></th>
+<th><span style="color: #AAAA00;">czytnik płyt?</span></th>
+<th><span style="color: #AA99AA;">ocena</span></th>
+</tr>
+<tr>
+<td>7/10</td>
+<td><i>poniekąd</i></td>
+<td>3,5</td>
+</tr>
+</table>
+</div>
+<div class="recenzje"><h1>KOMPUTER</h1><img src="img/test2.jpg" class="zdjrec">
+<table class="ocen" border="1">
+<tr>
+<th><span style="color: #FFFF00;">żółtość</span></th>
+<th><span style="color: #AAAA00;">czytnik płyt?</span></th>
+<th><span style="color: #AA99AA;">ocena</span></th>
+</tr>
+<tr>
+<td>4/10</td>
+<td>tak</td>
+<td>4</td>
+</tr>
+</table>
+</div>
+<div class="recenzje"><h1>KOMPUTER</h1><img src="img/test3.jpg" class="zdjrec">
+<table class="ocen" border="1">
+<tr>
+<th><span style="color: #FFFF00;">żółtość</span></th>
+<th><span style="color: #AAAA00;">czytnik płyt?</span></th>
+<th><span style="color: #AA99AA;">ocena</span></th>
+</tr>
+<tr>
+<td>0/10</td>
+<td><u>nie</u></td>
+<td>2</td>
+</tr>
+</table>
+</div>
+<div class="recenzje"><h1>KOMPUTER</h1><img src="img/test4.jpg" class="zdjrec">
+<table class="ocen" border="1">
+<tr>
+<th><span style="color: #FFFF00;">żółtość</span></th>
+<th><span style="color: #AAAA00;">czytnik płyt?</span></th>
+<th><span style="color: #AA99AA;">ocena</span></th>
+</tr>
+<tr>
+<td>0/10</td>
+<td>tak</td>
+<td>2,5</td>
+</tr>
+</table>
+</div>
+<div class="recenzje"><h1>KOMPUTER</h1><img src="img/test5.jpg" class="zdjrec">
+<table class="ocen" border="1">
+<tr>
+<th><span style="color: #FFFF00;">żółtość</span></th>
+<th><span style="color: #AAAA00;">czytnik płyt?</span></th>
+<th><span style="color: #AA99AA;">ocena</span></th>
+</tr>
+<tr>
+<td>0/10</td>
+<td><b>N/A</b></td>
+<td>2</td>
+</tr>
+</table>
+</div>
+<div class="galeria">
+<h1 style="padding-top: 30px;">
+GALERIA
+</h1>
+<img id="tt" class="galeriaimg" src="img/galeria1.jpg">
+<img class="galeriaimg" src="img/galeria2.jpg">
+<img class="galeriaimg" src="img/galeria3.jpg">
+<img class="galeriaimg" src="img/galeria4.jpg">
+<img class="galeriaimg" src="img/galeria5.jpg">
+<img class="galeriaimg" src="img/galeria6.jpg">
+<img class="galeriaimg" src="img/galeria7.jpg">
+<img class="galeriaimg" src="img/galeria8.jpg">
+<img class="galeriaimg" src="img/galeria9.jpg">
+<img class="galeriaimg" src="img/galeria10.jpg">
+<p style="text-align: center;">
+<b>zmień kolor tła!</b>
+</p>
+<script>
+$(".galeriaimg").on({
+	"mouseover" : function(){
+		$(this).animate({
+			width: 300,
+			height: 300
+			}, 800);
+		},
+	"mouseout" : function() {
+			$(this).animate({
+				width: 150,
+				height: 150
+			}, 800);
+		}
+});
+</script>
+<form method="POST" name="background" style="margin-left: 25%;">
+ <input type="button" value="żółty" onclick="changeh1('#FFF000')">
+ <input type="button" value="czarny" onclick="changeBackground('#000000')">
+ <input type="button" value="biały" onclick="changeBackground('#FFFFFF')">
+ <input type="button" value="zielony" onclick="changeBackground('#00FF00')">
+ <input type="button" value="niebieski" onclick="changeBackground('#0000FF')">
+ <input type="button" value="pomarańczowy" onclick="changeBackground('#FF8000')">
+ <input type="button" value="szary" onclick="changeBackground('#c0c0c0')">
+ <input type="button" value="czerwony" onclick="changeBackground('#FF0000')">
+ <input type="button" value="domyślny" onclick="changeBackground('#00FFFF')">
+</form>
+<p style="text-align: center;">
+<b>zmień kolor sekcji!</b>
+</p>
+<form method="POST" name="color" style="margin-left: 25%;">
+ <input type="button" value="żółty" onclick="changerecenzje('#FFF000')">
+ <input type="button" value="czarny" onclick="changerecenzje('#000000')">
+ <input type="button" value="biały" onclick="changerecenzje('#FFFFFF')">
+ <input type="button" value="zielony" onclick="changerecenzje('#00FF00')">
+ <input type="button" value="niebieski" onclick="changerecenzje('#0000FF')">
+ <input type="button" value="pomarańczowy" onclick="changerecenzje('#FF8000')">
+ <input type="button" value="szary" onclick="changerecenzje('#c0c0c0')">
+ <input type="button" value="czerwony" onclick="changerecenzje('#FF0000')">
+ <input type="button" value="domyślny" onclick="changerecenzje('#00FFFF')">
+</form>
+</div>
