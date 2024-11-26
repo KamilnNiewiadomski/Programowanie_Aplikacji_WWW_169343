@@ -1,13 +1,15 @@
 <?php
 error_reporting(E_ALL^E_NOTICE^E_WARNING);
-if($_GET['idp'] == '') $strona = 1;
+/*if($_GET['idp'] == '') $strona = 1;
 if($_GET['idp'] == 'podstrona1') $strona = 2;
 if($_GET['idp'] == 'podstrona2') $strona = 3;
 if($_GET['idp'] == 'podstrona3') $strona = 4;
 if($_GET['idp'] == 'podstrona4') $strona = 5;
-if($_GET['idp'] == 'podstrona5') $strona = 6;
+if($_GET['idp'] == 'podstrona5') $strona = 6;*/
+if(!($_GET['idp'])) $strona = 1;
+else $strona = $_GET['idp'];
 
-include("cfg.php");
+include("./cfg.php");
 ?>
 <html>
 <head>

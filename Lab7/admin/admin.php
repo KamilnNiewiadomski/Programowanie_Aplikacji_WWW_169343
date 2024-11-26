@@ -24,17 +24,61 @@ function ListaPodstron($link)
 	$result = mysqli_query($link,$query);
 	while($row = mysqli_fetch_array($result))
 	{
-		echo $row['id'].' '.$row['tytul'].' <br />';
+		echo $row['id'].' '.$row['page_title'].' <br />';
 	}
+}
+
+function EdytujPodstrone($link, $id)
+{
+	echo '<div class="edytowanie">
+	<form method="post" name="edycja" enctype="multipart/form-data" action="'.$_SERVER['REQUEST_URI'].'">
+	<table class="edytowanie">
+	<tr><td class="log4_t">tytuł</td><td><input type="text" name="tytul" class="edytowanie" /></td></tr>
+	<tr><td>treść</td><td><textarea name="tresc" class="edytowanie"></textarea></td></tr>
+	<tr><td>status</td><td><input type="checkbox" name="status" class="edytowanie" /></td></tr>
+	<tr><td>&nbsp</td><td><input type="submit" name="x1_submit" class="edytowanie" value="wyślij" /></td></tr>
+	</table>
+	</form>
+	</div>';
+	$title = $_POST['tytul'];
+	$tresc = $_POST['tresc'];
+	$status = $_POST['status'];
+	$query="UPDATE page_list SET page_title='$title', page_content='$content', status='$status' LIMIT 1";
+	mysqli_query($link,$query);
+}
+
+function DodajNowaPodstrone($link)
+{
+	echo '<div class="edytowanie">
+	<form method="post" name="edycja" enctype="multipart/form-data" action="'.$_SERVER['REQUEST_URI'].'">
+	<table class="edytowanie">
+	<tr><td class="log4_t">tytuł</td><td><input type="text" name="tytul" class="edytowanie" /></td></tr>
+	<tr><td>treść</td><td><textarea name="tresc" class="edytowanie"></textarea></td></tr>
+	<tr><td>status</td><td><input type="checkbox" name="status" class="edytowanie" /></td></tr>
+	<tr><td>&nbsp</td><td><input type="submit" name="x1_submit" class="edytowanie" value="wyślij" /></td></tr>
+	</table>
+	</form>
+	</div>';
+	$title = $_POST['tytul'];
+	$content =  $_POST['tresc'];
+	$status = $_POST['status'];
+	$query="INSERT INTO page_list VALUES ('$title', '$content', '$status') LIMIT 1";
+	mysqli_query($link,$query);
+}
+
+
+function UsunPodstrone($link, $id)
+{
+	$query="DELETE * FROM page_list WHERE id='$id' LIMIT 1";
+	mysqli_query($link,$query);
 }
 
 include '../cfg.php';
 echo FormularzLogowania();
 if ($_POST && $_POST['login_email'] == $login && $_POST['login_pass'] == $pass){ session_start(); $_SESSION['admin'] = true; }
 ListaPodstron($link);
-
-
-
+EdytujPodstrone($link, 0);
+DodajNowaPodstrone($link);
 
 
 
