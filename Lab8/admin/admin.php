@@ -77,8 +77,8 @@ include '../cfg.php';
 echo FormularzLogowania();
 if (!(empty($_POST['login_email'])) && !(empty($_POST['login_pass'])) && $_POST['login_email'] == $login && $_POST['login_pass'] == $pass){ session_start(); $_SESSION['admin'] = true; echo 'test';}
 include '../contact.php';
-Pokazkontakt();
-#WyslijMailKontakt('');
+#Pokazkontakt();
+WyslijMailKontakt('169343@student.uwm.edu.pl');
 if (!(empty($_POST['temat']) || empty($_POST['tresc']) || empty($_POST['email']))){
 echo $_POST['temat'].$_POST['tresc'].$_POST['email'];
 }
