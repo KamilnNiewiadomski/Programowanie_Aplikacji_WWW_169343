@@ -44,7 +44,7 @@ function PokazProdukt($link)
 #include 'cfg.php';
 #include 'showpage.php';
 #UsunProdukt($link,2);
-#DodajProdukt($link, 1, 'temp', 'opis', '2025-01-01', '2025-01-01', '2025-01-01', 123.0, 123.0, 1, 1, 'kategoria', 23, 'budowa2');
+#DodajProdukt($link, 2, 'temp', 'opis', '2025-01-01', '2025-01-01', '2025-01-01', 123.0, 123.0, 1, 1, 'kategoria', 23, 'budowa2');
 #EdytujProdukt($link, 2, 'te1mp', 'opis', '2025-01-01', '2025-01-01', '2025-01-01', 123.0, 123.0, 1, 1, 'xdddkategoria', 23, 'temp');
 #PokazProdukt($link);
 #echo PokazPodstrone(1,$link);

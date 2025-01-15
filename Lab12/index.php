@@ -79,8 +79,8 @@ echo '
 </from>
 </table>
 ';
-#echo $_POST['id'];
-#echo $_POST['ilosc'];
+echo $_POST['id'];
+echo $_POST['ilosc'];
 addToCard($_POST['id'], $_POST['ilosc'], $_POST['ilosc']);
 echo $_SESSION[$nr_1];
 echo $nr_1;

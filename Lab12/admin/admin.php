@@ -98,8 +98,8 @@ include '../category.php';
 include '../product.php';
 #include '../cart.php';
 
-echo isset($_SESSION['admin']);
-echo $_SESSION['admin'];
+#echo isset($_SESSION['admin']);
+#echo $_SESSION['admin'];
 
 if (!(empty($_POST['login_email'])) && !(empty($_POST['login_pass'])) && $_POST['login_email'] == $login && $_POST['login_pass'] == $pass && $_SESSION['admin'] != 1)
 	{$_SESSION['admin'] = 1;}
@@ -110,45 +110,27 @@ else
 	#Pokazkontakt();
 	echo 'Przypomnij hasło<br>';
 	PrzypomnijHaslo('169343@student.uwm.edu.pl');
-#}
+}
 #if ($_SESSION['admin'] == 1){
 #echo $_SESSION['admin']; 
 
 
 /* formularz kontaktowy */
 #WyslijMailKontakt('169343@student.uwm.edu.pl');
-	ListaPodstron($link);
-	echo '<br>';
-	EdytujPodstrone($link, 5);
-echo '
-<center>
-<table>
-<form method="POST">
-<tr>
-<td>akcja:   <input type="radio" name="akcja_kat" value="1">dodaj</td>
-<td><input type="radio" name="akcja_kat" value="2">edytuj</td>
-<td><input type="radio" name="akcja_kat" value="3">usuń</td>
-<td><input type="submit" value="zatwierdź"></td>
-</tr>
-<tr>
-<td><input type="number" name="id"></td>
-<td><input type="number" name="matka"></td>
-<td><input type="text" name="text"></td>
-</tr>
-</from>
-</table>
-';
+	#ListaPodstron($link);
+	#echo '<br>';
+	#EdytujPodstrone($link, 5);
 
 PokazKategorie($link, 0);
 echo '
 <center>
 <table>
-<form method="POST">
+<form method="POST" name="kategoria">
 <tr>
-<td>akcja:   <input type="radio" name="akcja_kat" value="1">dodaj</td>
-<td><input type="radio" name="akcja_kat" value="2">edytuj</td>
-<td><input type="radio" name="akcja_kat" value="3">usuń</td>
-<td><input type="submit" value="zatwierdź"></td>
+<td>akcja:   <input type="radio" name="akcja_kat" value="1" checked="checked">dodaj</td>
+<td>id <input type="radio" name="akcja_kat" value="2">edytuj</td>
+<td>matka <input type="radio" name="akcja_kat" value="3">usuń</td>
+<td>nazwa <input type="submit" value="zatwierdź"></td>
 </tr>
 <tr>
 <td><input type="number" name="id"></td>
@@ -157,25 +139,26 @@ echo '
 </tr>
 </from>
 </table>
+</center>
 ';
 switch ($_POST['akcja_kat']){
 case 1:
+        header("Refresh:0");
         echo "dodaje";
         #if ($_POST['id'] AND $_POST['matka'] AND $_POST['text'])
                 DodajKategorie($link, $_POST['id'], $_POST['matka'], $_POST['text']);
-        #header("Refresh:0");
         break;
 case 2:
+        header("Refresh:0");
 echo "edytuje";
         #if ($_POST['id'] AND $_POST['matka'] AND $_POST['text'])
                 EdytujKategorie($link, $_POST['id'], $_POST['matka'], $_POST['text']);
-        #header("Refresh:0");
         break;
 case 3:
+        header("Refresh:0");
 echo "usuwam";
         #if ($_POST['id'] AND $_POST['text'])
                 UsunKategorie($link, $_POST['id']);
-        #header("Refresh:0");
         break;
 }
 
@@ -184,15 +167,15 @@ PokazProdukt($link);
 echo '
 <center>
 <table>
-<form method="POST">
+<form method="POST" name="produkt">
 <tr>
-<td>akcja:   <input type="radio" name="akcja" value="1">dodaj</td>
+<td>akcja:   <input type="radio" name="akcja" value="1" checked="checked">dodaj</td>
 <td><input type="radio" name="akcja" value="2">edytuj</td>
 <td><input type="radio" name="akcja" value="3">usuń</td>
 <td><input type="submit" value="zatwierdź"></td>
 </tr>
 <tr>
-<td>id <input type="number" name="id"></td>
+<td>id <input type="number" name="id_prod"></td>
 <td>tytul <input type="text" name="tytul"></td>
 <td>opis <input type="text" name="opis"></td>
 </tr><td>data utworzenia <input type="date" name="data_utworzenia"></td>
@@ -201,7 +184,7 @@ echo '
 </tr><td>cena netto <input type="number" name="cena_netto"></td>
 <td>podatek vat <input type="number" name="podatek_vat"></td>
 <td>ilosc dostepnych sztuk <input type="number" name="ilosc_dostepnych_sztuk"></td>
-</tr><td>status dostepnosci <input type="text" name="status_dostepnosci"></td>
+</tr><td>status dostepnosci <input type="number" name="status_dostepnosci"></td>
 <td>kategoria <input type="text" name="kategoria"></td>
 <td>gabaryt produktu <input type="number" name="gabaryt_produktu"></td>
 <td>zdjecie <input type="text" name="zdjecie"></td>
@@ -211,24 +194,19 @@ echo '
 ';
 switch ($_POST['akcja']){
 case 1:
-        echo "dodaje";
-        #if ($_POST['id'] AND $_POST['matka'] AND $_POST['text'])
-	DodajProdukt($link, 2, 'temp', 'opis', '2025-01-01', '2025-01-01', '2025-01-01', 123.0, 123.0, 1, 1, 'kategoria', 23, 'temp');
         header("Refresh:0");
+	DodajProdukt($link, $_POST['id_prod'], $_POST['tytul'], $_POST['opis'], $_POST['data_utworzenia'], $_POST['data_modyfikacji'], $_POST['data_wygasniecia'], $_POST['cena_netto'], $_POST['podatek_vat'], $_POST['ilosc_dostepnych_sztuk'], $_POST['status_dostepnosci'], $_POST['kategoria'], $_POST['gabaryt_produktu'], $_POST['zdjecie']);
         break;
 case 2:
-echo "edytuje";
-        #if ($_POST['id'] AND $_POST['matka'] AND $_POST['text'])
-	EdytujProdukt($link, 2, 'te1mp', 'opis', '2025-01-01', '2025-01-01', '2025-01-01', 123.0, 123.0, 1, 1, 'xdddkategoria', 23, 'temp');
         header("Refresh:0");
+echo "edytuje";
+	EdytujProdukt($link, $_POST['id_prod'], $_POST['tytul'], $_POST['opis'], $_POST['data_utworzenia'], $_POST['data_modyfikacji'], $_POST['data_wygasniecia'], $_POST['cena_netto'], $_POST['podatek_vat'], $_POST['ilosc_dostepnych_sztuk'], $_POST['status_dostepnosci'], $_POST['kategoria'], $_POST['gabaryt_produktu'], $_POST['zdjecie']);
         break;
 case 3:
-echo "usuwam";
-        #if ($_POST['id'] AND $_POST['text'])
-                UsunProdukt($link, $_POST['id']);
         header("Refresh:0");
+echo "usuwam";
+                UsunProdukt($link, $_POST['id_prod']);
         break;
-}
 
 }
 
